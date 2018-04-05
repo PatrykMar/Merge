@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="time">5000</integer>
+    <integer name="progress">0</integer>
+    <integer name="progressReset">100</integer>
+</resources>
