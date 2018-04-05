@@ -30,7 +30,13 @@ public class GameOverActivity extends AppCompatActivity implements View.OnClickL
         {
             case R.id.playAgain:
                 Intent intent2 = new Intent(getApplicationContext(),SelectMenuActivity.class);
-                startActivity(intent2);
+                startActivity(intent2);break;
+
+            case R.id.goMenu:
+                Intent intent = new Intent(GameOverActivity.this,Menu.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("EXIT",true);
+                startActivity(intent);break;
         }
     }
 }

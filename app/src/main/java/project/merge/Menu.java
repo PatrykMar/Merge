@@ -19,7 +19,8 @@ public class Menu extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.littleidea);
+
+       mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.littleidea);
 
         mediaPlayer.start();
 
@@ -35,7 +36,7 @@ public class Menu extends AppCompatActivity {
 
     public void Start(View view)
     {
-        Intent intent = new Intent(getApplicationContext(),Start.class);
+        Intent intent = new Intent(getApplicationContext(),SelectMenuActivity.class);
         startActivity(intent);
     }
 
@@ -55,8 +56,8 @@ public class Menu extends AppCompatActivity {
     public void Quit(View view)
     {
         Builder dialog = new Builder(Menu.this);
-        dialog.setTitle("Exit");
-        dialog.setMessage("are you sure to exit?");
+        dialog.setTitle("Quit");
+        dialog.setMessage("Do you want to quit??");
         dialog.setPositiveButton("yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -66,8 +67,12 @@ public class Menu extends AppCompatActivity {
                 System.exit(1);
 
                 //if you want to finish just current activity
+                if(getIntent().getBooleanExtra("EXIT",false))
+                {
+                    finish();
+                }
 
-                Menu.this.finish();
+
             }
         });
         dialog.setNegativeButton("no", new DialogInterface.OnClickListener() {

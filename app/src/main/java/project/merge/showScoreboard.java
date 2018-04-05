@@ -7,12 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-import project.merge.R;
-import project.merge.adapter.CustomListAdapter;
-import project.merge.model.Items;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import project.merge.adapter.CustomListAdapter;
+import project.merge.model.Items;
 
 public class showScoreboard extends AppCompatActivity {
     private List<Items> itemsList = new ArrayList<Items>();
