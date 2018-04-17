@@ -8,11 +8,11 @@
     <ListView
         android:id="@+id/list"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
         android:paddingBottom="5dp"
         android:clipToPadding="false"
-        android:divederHeight="1dp"
+        android:dividerHeight="1dp"
         android:cacheColorHint="#FFFFFF"
-        android:layout_marginTop="56dp"</ListView>
+        android:layout_marginTop="56dp"/>
 
 </android.support.constraint.ConstraintLayout>

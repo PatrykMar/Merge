@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import project.merge.model.Items;
+
 import static android.app.AlertDialog.Builder;
 import static android.os.Process.killProcess;
 
@@ -19,19 +21,23 @@ public class Menu extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-
-       mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.littleidea);
-
-        mediaPlayer.start();
+        onStart();
 
     }
 
-    //@Override
-   // protected void onPause(){
-     //   super.onPause();
-       // mediaPlayer.stop();
+    @Override
+    protected void onStart(){
+        super.onStart();
+        mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.littleidea);
+        mediaPlayer.start();
+    }
+
+    @Override
+    protected void onPause(){
+       super.onPause();
+        mediaPlayer.stop();
         //mediaPlayer.release();
-    //}
+    }
 
 
     public void Start(View view)
@@ -42,6 +48,10 @@ public class Menu extends AppCompatActivity {
 
     public void showScoreboard(View view)
     {
+        Items name = new Items();
+        Items score = new Items();
+        name.setName("Filip");
+        score.setScore("150");
         Intent intent = new Intent(getApplicationContext(),showScoreboard.class);
         startActivity(intent);
 

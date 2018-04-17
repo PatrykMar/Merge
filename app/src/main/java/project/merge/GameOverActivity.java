@@ -1,11 +1,15 @@
 package project.merge;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import project.merge.model.Items;
+
 
 public class GameOverActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -18,7 +22,6 @@ public class GameOverActivity extends AppCompatActivity implements View.OnClickL
         playAgain.setOnClickListener(this);
         Intent intent1 = getIntent();
         String message = intent1.getStringExtra(MainActivity.EXTRA_MESSAGE);
-
         TextView finalScore = findViewById(R.id.finalScore);
         finalScore.setText("Final " + message);
     }
@@ -36,6 +39,7 @@ public class GameOverActivity extends AppCompatActivity implements View.OnClickL
                 Intent intent = new Intent(GameOverActivity.this,Menu.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra("EXIT",true);
+                onPause();
                 startActivity(intent);break;
         }
     }

@@ -16,6 +16,8 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import project.merge.model.Items;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static final String EXTRA_MESSAGE = "ie.ul.ColourMatch.MESSAGE";
@@ -159,6 +161,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 bar.setMax(bar.getMax() - 100);
             }
             scoreView.setText("Score: " + score);
+            Items temp = new Items();
+            temp.setScore(Integer.toString(score));
             generateBoard();
         }
     }
