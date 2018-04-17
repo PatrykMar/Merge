@@ -12,21 +12,22 @@ import java.util.List;
 import project.merge.R;
 import project.merge.model.Items;
 
-
 public class CustomListAdapter extends BaseAdapter {
-    private Context mContext;
+
+    private  Context mContext;
     private LayoutInflater inflater;
     private List<Items> itemsItems;
 
 
-    public CustomListAdapter(Context context, List<Items> itemsItems){
+
+    public CustomListAdapter(Context context, List<Items> itemsItems) {
         this.mContext = context;
         this.itemsItems = itemsItems;
 
     }
 
     @Override
-    public int getCount(){
+    public int getCount() {
         return itemsItems.size();
     }
 
@@ -36,26 +37,26 @@ public class CustomListAdapter extends BaseAdapter {
     }
 
     @Override
-    public long getItemId(int position){
+    public long getItemId(int position) {
         return position;
     }
 
     @Override
-    public View getView(int position, View scoreView, ViewGroup parent){
+    public View getView(int position, View scoreView, ViewGroup parent) {
         ViewHolder holder;
-        if(inflater == null){
+        if (inflater == null) {
             inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
-        if(scoreView == null){
+        if (scoreView == null) {
 
-            scoreView = inflater.inflate(R.layout.list_row,parent,false);
+            scoreView = inflater.inflate(R.layout.list_row, parent, false);
             holder = new ViewHolder();
             holder.name = (TextView) scoreView.findViewById(R.id.name);
             holder.score = (TextView) scoreView.findViewById(R.id.score);
 
             scoreView.setTag(holder);
-        }
-        else {
+
+        } else {
             holder = (ViewHolder) scoreView.getTag();
         }
 
@@ -67,7 +68,10 @@ public class CustomListAdapter extends BaseAdapter {
     }
 
     static class ViewHolder {
+
         TextView name;
         TextView score;
+
     }
+
 }
