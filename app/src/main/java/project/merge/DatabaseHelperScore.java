@@ -15,14 +15,14 @@ import java.util.List;
 
 import project.merge.model.Items;
 
-public class DatabaseHelper extends SQLiteOpenHelper {
+public class DatabaseHelperScore extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "scoreManager";
     private static final String TABLE_SCORE = "score_table";
     private static final String KEY_NAME = "name";
     private static final String KEY_SCORE = "score";
 
-    public DatabaseHelper(Context context) {
+    public DatabaseHelperScore(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
